@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "994987001341",
+    "project_id": "ecommerceapp-707d9",
+    "storage_bucket": "ecommerceapp-707d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994987001341:android:5b12f8bb86643cb4144594",
+        "android_client_info": {
+          "package_name": "com.example.youtube_tutorial_ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994987001341-hevq7dhrih38etedqflov7f4620k7b23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJJxlD7UF8UhOtTTBVqjhyFE16b_OCoWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994987001341-hevq7dhrih38etedqflov7f4620k7b23.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
