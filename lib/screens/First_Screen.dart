@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return AnimatedContainer(
       transform: Matrix4.translationValues(xOffset, yOffset, 0)
         ..scale(scaleFactor),
-      color: Colors.grey[600],
+      color: Colors.black87,
       duration: Duration(milliseconds: 250),
       child: ListView(
         children: [
@@ -30,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: Icon(
                         Icons.arrow_back_ios,
                         color: Colors.white,
+                        size: 40,
                       ),
                       onPressed: () {
                         setState(() {
@@ -129,23 +130,12 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         margin: EdgeInsets.only(left: 10),
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight,
-                colors: [Colors.black, Colors.white]),
-            borderRadius: BorderRadius.circular(25),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey[800],
-                  offset: Offset(1, 1),
-                  blurRadius: 3,
-                  spreadRadius: 1),
-              BoxShadow(
-                  color: Colors.grey[900],
-                  offset: Offset(1, 1),
-                  blurRadius: 3,
-                  spreadRadius: 1)
-            ]),
+          gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+              colors: [Colors.purple, Colors.blue]),
+          borderRadius: BorderRadius.circular(25),
+        ),
         child: Stack(
           children: [
             //how to add image  ???
@@ -182,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
             gradient: LinearGradient(
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
-                colors: [Colors.black, Colors.white])),
+                colors: [Colors.blue, Colors.red])),
         child: Stack(
           children: [
             positionOfTextOnCard("$products", 20, 45),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:youtube_tutorial_ecommerce/custom_widgets/custom_login_buttons.dart';
 
 class SecondPage extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.grey[600],
+      backgroundColor: Colors.black87,
       body: ListView(
         children: [
           Container(
@@ -70,25 +71,10 @@ class _SecondPageState extends State<SecondPage> {
           SizedBox(
             height: 20,
           ),
-          Container(
-              height: 40,
-              margin: EdgeInsets.only(left: 40, right: 40),
-              decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(18),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey[800],
-                        offset: Offset(4.0, 4.0),
-                        blurRadius: 20,
-                        spreadRadius: 3),
-                    BoxShadow(
-                        color: Colors.grey[700],
-                        offset: Offset(-4.0, -4.0),
-                        blurRadius: 20,
-                        spreadRadius: 3)
-                  ]),
-              child: Center(child: Text("payment method"))),
+          CustomBtn(
+            text: "Payment Method",
+            outlineBtn: false,
+          )
         ],
       ),
     );

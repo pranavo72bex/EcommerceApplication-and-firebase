@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
           Icon(Icons.perm_identity, size: 25),
         ],
       ),
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.black87,
       body: Stack(
         children: [DrawerScreen(), HomeScreen()],
       ),
