@@ -7,4 +7,8 @@ class Constants {
       fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.black);
   static const passwordHeading = TextStyle(
       fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.green);
+  static const shopeName = TextStyle(
+      fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.blue);
+  static const positionOnCardText =
+      TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold);
 }

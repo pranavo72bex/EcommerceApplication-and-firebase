@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:youtube_tutorial_ecommerce/contents.dart';
+import 'package:youtube_tutorial_ecommerce/custom_widgets/Shopping_card_horizontal_list.dart';
+import 'package:youtube_tutorial_ecommerce/custom_widgets/horizontalCard.dart';
 import 'package:youtube_tutorial_ecommerce/custom_widgets/searchbar_firstscreen.dart';
-import 'package:youtube_tutorial_ecommerce/screens/detail_of_Screens.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -55,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       }),
               Text(
                 "Shope Name",
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: Constants.shopeName,
               ),
               IconButton(
                   icon: Icon(
@@ -70,128 +73,85 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.only(top: 15, left: 15),
             child: Text(
               "Categories",
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: Constants.shopeName,
             ),
           ),
+          Container(
+            margin: EdgeInsets.only(left: 5, top: 10),
+            height: 180,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                ShoppingCardContainer(
+                  name: "Nike",
+                  price: "200",
+                  number: "01",
+                ),
+                ShoppingCardContainer(
+                  name: "Puma",
+                  price: "200",
+                  number: "01",
+                ),
+                ShoppingCardContainer(
+                  name: "Addidas",
+                  price: "200",
+                  number: "01",
+                ),
+                ShoppingCardContainer(
+                  name: "Goldstar",
+                  price: "200",
+                  number: "01",
+                ),
+                ShoppingCardContainer(
+                  name: "Goldensh",
+                  price: "200",
+                  number: "01",
+                ),
+              ],
+            ),
+          ),
+
           //vertical card
-          InkWell(
-            onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => SecondPage()));
-            },
-            child: Container(
-              margin: EdgeInsets.only(left: 5, top: 10),
-              height: 180,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  card("Nike", "Rs200", "01"),
-                  card("puma", "Rs300", "02"),
-                  card("Shikhar", "Rs200", "03"),
-                  card("Addidas", "Rs400", "04"),
-                  card("jpt", "Rs400", "05")
-                ],
-              ),
-            ),
-          ),
-          //horizontal card
           SizedBox(
             height: 20,
           ),
-          horizontalContainers("Adidas", "5000"),
+          HorizontalCard(
+            name: "Nike",
+            price: "5000",
+          ),
           SizedBox(
             height: 10,
           ),
-          horizontalContainers("puma", "5000"),
+          HorizontalCard(
+            name: "Puma",
+            price: "5000",
+          ),
           SizedBox(
             height: 10,
           ),
-          horizontalContainers("Shikhar", "5000"),
+          HorizontalCard(
+            name: "Addias",
+            price: "5000",
+          ),
           SizedBox(
             height: 10,
           ),
-          horizontalContainers("jpt", "5000"),
+          HorizontalCard(
+            name: "GoldStar",
+            price: "5000",
+          ),
           SizedBox(
             height: 10,
           ),
-          horizontalContainers("puma", "5000"),
+          HorizontalCard(
+            name: "shikhar",
+            price: "5000",
+          ),
           SizedBox(
             height: 10,
           ),
-          horizontalContainers("Shikhar", "5000"),
         ],
       ),
     );
-  }
-
-  Widget card(name, price, number) {
-    return AspectRatio(
-      aspectRatio: 2.3 / 3,
-      child: Container(
-        margin: EdgeInsets.only(left: 10),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.bottomLeft,
-              end: Alignment.topRight,
-              colors: [Colors.purple, Colors.blue]),
-          borderRadius: BorderRadius.circular(25),
-        ),
-        child: Stack(
-          children: [
-            //how to add image  ???
-            positionOfTextOnCard("$name", 10.0, 40.0),
-            positionOfTextOnCard("$price", 10.0, 10.0),
-            positionOfTextOnCard("$number", 10.0, 150.0),
-            Positioned(
-                bottom: 0,
-                right: 0,
-                child: Container(
-                  child: IconButton(
-                    icon: Icon(Icons.add_shopping_cart_rounded),
-                    onPressed: () {},
-                    color: Colors.white,
-                  ),
-                ))
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget horizontalContainers(products, prices) {
-    return InkWell(
-      onTap: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => SecondPage()));
-      },
-      child: Container(
-        margin: EdgeInsets.only(left: 10, right: 10),
-        height: 80,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            gradient: LinearGradient(
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight,
-                colors: [Colors.blue, Colors.red])),
-        child: Stack(
-          children: [
-            positionOfTextOnCard("$products", 20, 45),
-            positionOfTextOnCard("Rs $prices", 20, 10)
-            //yesko side ma image halney
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget positionOfTextOnCard(textName, double left, double bottom) {
-    return Positioned(
-        bottom: bottom,
-        left: left,
-        child: Text(
-          "$textName",
-          style: TextStyle(
-              fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
-        ));
   }
 }
