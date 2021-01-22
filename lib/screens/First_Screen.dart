@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 15, left: 15),
             child: Text(
-              "Categories",
+              "Top Sell",
               style: Constants.shopeName,
             ),
           ),

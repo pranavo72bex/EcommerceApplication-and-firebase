@@ -11,7 +11,7 @@ class _SEARCHBARState extends State<SEARCHBAR> {
     return Container(
       margin: EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
-        color: Colors.blue[300],
+        color: Colors.white,
         borderRadius: BorderRadius.circular(18),
       ),
       child: TextField(

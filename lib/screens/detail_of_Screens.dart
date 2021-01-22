@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:youtube_tutorial_ecommerce/custom_widgets/custom_login_buttons.dart';
+import 'package:youtube_tutorial_ecommerce/custom_widgets/start_rating.dart';
 
 class SecondPage extends StatefulWidget {
   @override
@@ -8,9 +9,12 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
+  final imageList = ["Assets/images/shoes1.png", "Assets/images/shoes2.png"];
+  double rating = 3.5;
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.black87,
       body: ListView(
@@ -32,7 +36,7 @@ class _SecondPageState extends State<SecondPage> {
             ),
           ),
           Container(
-            height: size * 0.70,
+            height: size * 0.60,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -41,30 +45,36 @@ class _SecondPageState extends State<SecondPage> {
             child: Stack(
               children: [
                 Container(
-                    height: size * 0.5,
+                    height: size * 0.34,
                     child: new Swiper(
                       itemBuilder: (BuildContext context, int index) {
-                        return new Image.network(
-                          "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg",
-                          fit: BoxFit.fill,
-                        );
+                        return new Image.asset(imageList[index]);
                       },
-                      itemCount: 3,
+                      itemCount: 2,
                       autoplay: true,
                       viewportFraction: 0.8,
                       scale: 0.9,
                       pagination: SwiperPagination(),
                     )),
                 textOnCard(
-                    "Adidas shoes", 20.0, 90.0, Colors.black, FontWeight.bold),
+                    "Adidas shoes", 20.0, 130.0, Colors.black, FontWeight.bold),
                 textOnCard(
-                    "Rs 500", 20.0, 70.0, Colors.blue, FontWeight.normal),
+                    "Rs 500", 20.0, 110.0, Colors.blue, FontWeight.normal),
                 textOnCard(
-                    "This product is excluded from all promotional.This product is excluded from all promotional.This product is excluded from all promotional",
+                    "This product is excluded from all promotional.The \nleBron17 LMTD features a large Max Air unit in the\nheel and zoom Air curshioning for extra comfort.",
                     20.0,
-                    40.0,
+                    55.0,
                     Colors.black,
-                    FontWeight.normal)
+                    FontWeight.normal),
+                Positioned(
+                  bottom: 10,
+                  right: 20,
+                  child: StarRating(
+                    rating: rating,
+                    onRatingChanged: (rating) =>
+                        setState(() => this.rating = rating),
+                  ),
+                ),
               ],
             ),
           ),
@@ -74,6 +84,10 @@ class _SecondPageState extends State<SecondPage> {
           CustomBtn(
             text: "Payment Method",
             outlineBtn: false,
+          ),
+          CustomBtn(
+            text: "Add To Basket",
+            outlineBtn: true,
           )
         ],
       ),

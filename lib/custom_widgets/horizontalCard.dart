@@ -19,14 +19,19 @@ class HorizontalCard extends StatelessWidget {
         height: 80,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            gradient: LinearGradient(
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight,
-                colors: [Colors.blue, Colors.red])),
+            // gradient: LinearGradient(
+            //     begin: Alignment.bottomLeft,
+            //     end: Alignment.topRight,
+            //     colors: [Colors.blue, Colors.red])
+            color: Colors.white),
         child: Stack(
           children: [
-            TextOnCard(text: "$name", left: 20.0, bottom: 45.0),
-            TextOnCard(text: "$price", left: 20.0, bottom: 10.0),
+            Positioned(
+                child: Image.asset(
+              "Assets/images/shoes1.png",
+            )),
+            TextOnCard(text: "$name", left: 280.0, bottom: 45.0),
+            TextOnCard(text: "$price", left: 280.0, bottom: 10.0),
           ],
         ),
       ),

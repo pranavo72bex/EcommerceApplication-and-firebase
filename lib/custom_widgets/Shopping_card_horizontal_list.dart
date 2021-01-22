@@ -18,17 +18,22 @@ class ShoppingCardContainer extends StatelessWidget {
         aspectRatio: 2.3 / 3,
         child: Container(
           height: 180,
-          margin: EdgeInsets.only(left: 10),
+          margin: EdgeInsets.only(
+            left: 10,
+          ),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight,
-                colors: [Colors.purple, Colors.blue]),
-            borderRadius: BorderRadius.circular(25),
+            color: Colors.white,
+            // gradient: LinearGradient(
+            //     begin: Alignment.bottomLeft,
+            //     end: Alignment.topRight,
+            //     colors: [Colors.purple, Colors.blue]),
+            borderRadius: BorderRadius.circular(18),
           ),
           child: Stack(
             children: [
-              //how to add image  ???
+              Image.asset(
+                "Assets/images/shoes1.png",
+              ),
               TextOnCard(text: "$name", left: 10.0, bottom: 40.0),
               TextOnCard(text: "$price", left: 10.0, bottom: 10.0),
               TextOnCard(text: "$number", left: 10.0, bottom: 150.0),

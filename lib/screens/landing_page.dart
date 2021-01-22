@@ -53,12 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       return HomePage();
                     }
                   }
-
-                  // return Scaffold(
-                  //   body: Center(
-                  //     child: Text("Authentication is establish"),
-                  //   ),
-                  // );
                 });
           }
         });
